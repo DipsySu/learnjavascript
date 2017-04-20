@@ -1,41 +1,40 @@
+'use strict';
+//测试 文件fs 
+var fs = require('fs');
+//读取文件,读取 sample.txt 的内容 , 异步读取
+fs.readFile('sample.txt','utf-8',function(err,data){
+
+        if(err){
+            console.log(err);
+        }else{
+            console.log(data);   
+        }
+});
+
+//同步读取
+var data = fs.readFileSync('sample.txt','utf-8');
+console.log('同步读取'+data);
+
+
+// 写入文件
+var textContent = '你好,我是 \n 小小酥';
+fs.writeFile('output.txt',textContent,function(err){
+        if (err) {
+               console.log('写入文件出错:'+err); 
+        } else {
+                console.log('写入文件成功');
+        }
+});
+
+
 /**
- * 第七行感觉有点类似初始化一个对象
+ * 引用模块
+ * 感觉有点类似初始化一个对象
  * 然后用这个对象去调用方法
  */ 
-
-'use strict';
-
-
-
-var http = require('http');
-
-var server = http.createServer(function(request,response){
-
-        console.log(request.method + ':' + request.url);
-
-        response.writeHead(200,{'Content-Type':'text/html'});
-
-        response.end('<h1>Hello Word</h1>');
-
-
-});
-server.listen(8080);
-console.log('Server is running at http://127.0.0.1:8080/'); 
-
-// var greet = require('./hello');
-// var fs = require('fs');
-// fs.readFile('sample.txt','utf-8',function(err,data){
-
-//         if(err){
-//             console.log(err);
-//         }else{
-//             console.log(data);   
-//         }
-
-// });
-// // var getSum = require('./hello'); 
-// var s = 'mike';
-// greet.greet(s); 
-// greet.getSum(2,43);
+var greet = require('./hello');
+var s = 'mike';
+greet.greet(s); 
+greet.getSum(2,43);
 
 
