@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>test log</title>
+	</head>
+	<body>
+		
+		<div id="testlog">
+		<h2> 两好三坏最帅</h2>
+		<h2> 两好三坏最帅</h2>
+			
+		</div>
+		
+	<script type="text/javascript">
+		// 使用格式输出
+		//console.log('log输出');
+		//console.info('info输出');
+		//console.error('error 输出');
+		//console.warn('warn 输出');
+		
+		//使用分组输出
+		console.group('第一组输出:');
+		console.log('1-1.输出');
+		console.log('1-2.输出');
+		console.groupEnd();
+		console.group('第二组输出:');
+		console.log('2-1.输出');
+		console.log('2-2.输出');
+		console.groupEnd();
+		//使用占位符输出,%s 输出字符串, %f 输出整型,%f 输出浮点型
+		console.log('我是%s, 出生于%d 年,身高是%f','小小酥',2001,178.1);
+		
+		//查看对象信息 方法&属性;
+		var person = {
+			'blog':'http://suqiankun.com/bolg',
+			'qq':'771909584',
+		}
+		console.dir(person);
+		//输出 dom 元素;
+		console.dirxml(testlog);
+		//判断表达式是否为为真,如果不为真,输出相应信息,并抛出异常
+		console.assert(1 == 2); 
+		//抛出异常信息
+		//Assertion failed: console.assert
+		//(anonymous) @ new_file.html:43
+		
+		//跟踪函数调用过程
+		/*函数是如何被调用的，在其中加入console.trace()方法就可以了*/ 　　
+function add(a, b) {
+    console.trace();　　　　
+    return a + b;　　
+}　　
+var x = add3(1, 1);　　
+function add3(a, b) {
+    return add2(a, b);
+}　　
+function add2(a, b) {
+    return add1(a, b);
+}　　
+function add1(a, b) {
+    return add(a, b);
+}
+		
+		
+		
+		
+	</script>
+	</body>
+</html>
