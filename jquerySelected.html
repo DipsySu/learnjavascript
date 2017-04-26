@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>selected</title>
+	<script src="jquery-3.2.0.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div >
+		<label for="">点击选择入住酒店</label>
+			<br />
+			
+		<select id="hotel">
+    			<option value="">请选择</option>
+    			<option value="rujia">如家</option>
+    			<option value="qitian">7</option>
+    			<option value="jinjiangzhixing">锦江之星</option>
+    			<option value="su8">速8</option>
+    		</select>
+    		
+    		<br />
+    		<span> 您当前要入住的酒店的名字:</span> <input id="hotelName" type="text" />
+    		
+    		<br />
+    		<span> 您当前要入住的酒店value:</span> <input id="hotelValue" type="text" />
+    		
+    		<br /> 
+    		<button type="button" id="addHotel"> 点击增加酒店</button>
+    		<button type="button" id="delHotel"> 点击删除酒店</button>
+	</div>
+	<div id="liandongSelect">
+		<select id="hotel1">
+    			<option value="">请选择</option>
+    			<option value="rujia">如家</option>
+    			<option value="qitian">7</option>
+    			<option value="jinjiangzhixing">锦江之星</option>
+    			<option value="su8">速8</option>
+    		</select>
+		<select id="hotel2">
+    			<option value="">请选择</option>
+    			<option value="201">201/option>
+    			<option value="202">202</option>
+    			<option value="203">204</option>
+    			<option value="205">205</option>
+    		</select>
+		
+		
+	</div>
+	
+</body>
+<script type="text/javascript">
+
+
+	//当选中 selected的某一项的时候触发, 与 selected 的 onchange 事件一样
+	$("#hotel").change(function(){
+		
+		//$("#hotel").find("option:selected").text(); ---> 使用 jquery 获取到选中的 text
+		document.getElementById("hotelName").value = $("#hotel").find("option:selected").text();
+		//$("#hotel").find("option:selected").val();  --> 获取选中的 value
+		//$("#hotel").val();   --> 获取选中的 value
+		document.getElementById("hotelValue").value = $("#hotel").val();
+		
+	});
+	$("#addHotel").click(function(){
+			var appendStr = "<option value='xierdun'>希尔顿</option><option value='lanfenghuang'>蓝凤凰</option><option value='lanfenghuang1'>蓝凤凰</option>";
+			$("#hotel").append(appendStr);
+	});
+	$("#delHotel").click(function(){
+			//删除 options
+//			$("#hotel").find("option:contains('希尔顿')").remove();
+			//删除 option
+//			$("#hotel option[value='rujia']").remove();
+			
+	});
+	
+	$(document).ready(function(){
+		//设置默认选中项
+		//$("#hotel").get(0).selectedIndex = 1;
+		
+		//取出默认选中项的索引值
+		//alert($("#hotel").get(0).selectedIndex);
+		
+		//根据 text 设置默认选中值
+//		$("#hotel").find("option:contains('如家')").attr("selected",true);
+		
+	});
+	
+</script>
+<script type="text/javascript">
+
+</script>
+</html>
