@@ -18,8 +18,18 @@
 		<h2>	hahahahhahhaha</h2>
 		<h3>hshdadhauidhsuiahduishauifhuashdfuhsauifdh</h3>
 		<h4>hdsajiyfu8ghbjhiabuwieyagydfusiadjsahduisagfyusaidfsajfh</h4>
+	<div>
+		<h5>div 的 h1标签</h5>
+		<p>div 的 p 标签</p>
+	</div>
+
+		<p>body 下的 p 标签</p>
 	
 	<script type="text/javascript">
+		
+		$("body>p").css('background-color','red');
+		$("body>div>p").css('background-color','beige')
+		
 			//包含特殊字符的 id, 需要使用 ' \\ ' 进行转意
 			//$('#foo\\:bar').text()
 //			console.log($('span').text());
@@ -27,7 +37,7 @@
 //			console.log($("lable +span"));
 //			选择器
 
-$(":header").css('background',"aliceblue");
+//$(":header").css('background',"aliceblue");
 /**
  * even 奇数选择器
  * odd 偶数选择器
@@ -36,7 +46,14 @@ $(":header").css('background',"aliceblue");
  * lt(*) ,查找索引值小于 * 的所有元素
  * last 返回最后一个元素
  * header 获取所有 h 级别的元素
- * 
+ * :contains(params) 包含 params 参数的元素
+ * empty 返回空元素
+ * :parent 返回含有子元素的元素
+ * :hidden 返回所有隐藏元素
+ * [] eg : $("div [id]")  0---> 选择 div下有对应 id 的元素
+ * [Attribute = vlaue] 查找属性值为 *** 的元素,并返回
+ * [Attribute ^= vlaue] 查找属性值开头包含value 的 元素,并返回
+ * [Attribute *= vlaue] 查找属性值包含value 的 元素,并返回
  */
 			
 			
