@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+		<div id="app">
+			{{message}}
+		</div>
+		
+		<div id="app1">
+			<span v-bind:title="message">
+				悬停展示更多信息
+			</span>
+		</div>
+		
+		<div id="app2">
+			<p v-if= 'seen'> 我会消失的!</p>
+			<button type="button" v-on:click = 'showPTag'> 点我变魔术 </button>
+		</div>
+		
+		<div id="app3">
+			<p> {{message}} </p>
+			<textarea v-model = 'message'  >
+			</textarea>
+		</div>
+		
+			<ol>
+				<todolist></todolist>				
+			</ol>
+		<button type="button" onclick="test()"> ----------- </button>
+	</body>
+	
+	<script type="text/javascript">
+		var app = new Vue({
+			el:'#app',
+			data: {
+				message: 'suqiankunzuishuai'
+			}
+		});
+		var app1 = new Vue({
+			el:'#app1',
+			data: {
+				message: '沧海明月'
+			}
+		});
+
+		var app2 = new Vue({
+			el:'#app2',
+			data: {
+				seen: false,
+			},
+			methods:{
+				showPTag: function(){
+					this.seen = true;	
+				}
+			},
+		});
+		
+		var app3 = new Vue({
+			el: "#app3",
+			data: {
+				message: '握草,苏乾坤最帅!'
+			},
+		});
+		
+	function test(){
+			Vue.component('todolist',{
+				template: '<li>这是个待办事项1</li>'
+			}
+		);
+	}
+		
+	</script>
+</html>
